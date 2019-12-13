@@ -1,0 +1,71 @@
+npm install -g @angular/cli
+
+
+ng new --style=sass ngexample
+cd ngexample
+------------------#-bootStrap----------------------------------
+npm install bootstrap jquery popper 
+npm install --save @ng-bootstrap/ng-bootstrap
+0.app.module.ts
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+imports: [
+NgbModule.forRoot()
+]
+
+1.styles.scss
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/bootstrap-grid';
+#or------
+@import "~node_modules/bootstrap/scss/bootstrap.scss";
+@import '~node_modules/bootstrap/scss/_variables.scss';
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
+
+------------------------------------------------------
+
+
+ng serve --host 0.0.0.0 --port 4201
+ng generate component my-new-component
+ng g service my-new-service
+
+-------------------route-----------------------------------
+ng g c /views/comm/PageNotFound
+ng g c /views/productor/VM
+ng g c /views//productor/Network
+ng g c Home
+
+
+src/app/app-routing.module.ts
+import { RouterModule, Routes } from '@angular/router';
+const routes: Routes = [
+  { path: 'vm/:id', component: VMComponent },
+  { path: 'network/:id',      component: NetworkComponent },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+  { path: '',
+    redirectTo: '/heroes',
+    pathMatch: 'full'
+  },
+  { path: '**', component: PageNotFoundComponent }
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

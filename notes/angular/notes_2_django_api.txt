@@ -1,0 +1,134 @@
+https://qiita.com/xKxAxKx/items/14d81209ac195e485338
+https://www.metaltoad.com/blog/angular-api-calls-django-part-2-building-micro-blog-app
+1.11.2.
+#--------Install-----------------
+1.C:\learn\python-3.7.5\python37._pth
+Lib\site-packages
+
+2.install pip 
+curl  http----get-pip.py
+python get-pip.py
+
+3.install package
+# pip install django
+
+
+pip install djangorestframework
+pip install django-filter
+pip install django-cors-headrs
+
+django-admin stratproject InfraManager
+
+cd InfraManager
+python manage.py startapp Azure
+#python manage.py makemigrations appname
+python manage.py migrate
+python manage.py runserver
+
+python manage.py createsuperuser --email admin@example.com --username admin
+
+
+curl -H 'Accept: application/json; indent=4' -u admin:password123 http://127.0.0.1:8000/users/
+#-----------setting.py--------------------
+https://www.django-rest-framework.org/tutorial/quickstart/
+django_app/django_app/settings.py
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'to_do', # add to_do
+    'rest_framework', # add API
+    'corsheaders',  #add
+]
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware', //add
+    'corsheaders.middleware.CorsMiddleware', //add
+]
+CORS_ALLOW_CREDENTIALS = True  #add
+CORS_ORIGIN_ALLOW_ALL = True  #add
+
+#----------Create model------------------
+django_app/to_do/models.py
+from django.db import models
+
+class Todo(models.Model):
+    title = models.CharField(max_length=140, blank=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+#-------------migration--------
+$ python manage.py makemigrations
+$ python manage.py migrate
+#-------------admin user--------
+python manage.py createsuperuser
+#-------------admin site---------
+django_app/to_do/admin.py
+from django.contrib import admin
+
+from .models import Todo
+
+@admin.register(Todo)
+class Todo(admin.ModelAdmin):
+    pass
+#------------Run server------------------
+python manage.py runserver
+http://localhost:8000/admin
+
+#------------Serialize---------------
+django_app/to_do/serializer.py
+
+from rest_framework import serializers
+from .models import Todo
+
+class TodoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Todo
+        fields = ('id', 'title', 'created_at')
+#------------View---------------
+django_app/to_do/views.py
+from django.shortcuts import render
+import django_filters
+from rest_framework import viewsets, filters
+
+from .models import Todo
+from .serializer import TodoSerializer
+
+from rest_framework.decorators import api_view
+
+class TodoViewSet(viewsets.ModelViewSet):
+    queryset = Todo.objects.all().order_by('-created_at')
+    serializer_class = TodoSerializer
+#-----------URL Pattern---------
+django_app/django_app/urls.py
+from django.conf.urls import url, include //add include
+from django.contrib import admin
+
+from to_do.urls import router as to_do_router
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^api/', include(to_do_router.urls)), 
+]
+#------------------------------
+django_app/to_do/urls.py
+from rest_framework import routers
+from .views import TodoViewSet
+
+router = routers.DefaultRouter()
+router.register(r'todo', TodoViewSet)
+#----------test---------------
+python manage.py runserver
+http://localhost:8000/api

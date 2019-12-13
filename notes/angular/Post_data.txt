@@ -1,0 +1,48 @@
+<form method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-4">
+            <input type="file" id="fUpload" name="files" class="form-control" />
+        </div>
+        <div class="col-md-8">
+            <input type="button" id="btnUpload" value="Upload" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8" style="padding-top:10px;">
+            <button asp-page-handler="Export">Export</button>
+        </div>
+    </div>
+    <br/>
+    <div id="dvData"></div>
+</form>
+-------------------------------------------------------------------------------------
+<form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+              <input type = "file" id = "file" (change) = "handleFileInput($event.target.files)" >
+              <label  *ngIf="fileToUpload">
+                Upload File: {{ fileToUpload.name }}
+              </label>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+-------------------------------------------------
+import { HttpClient } from '@angular/common/http';
+  http: HttpClient = null;
+  fileToUpload: File = null;
+
+  handleFileInput(files: FileList) {
+    this.fileToUpload = files.item(0);
+  }
+
+  onSubmit() {
+    const formData = new FormData();
+    formData.append('file', this.fileToUpload);
+    this.http.post('api/SampleData', formData)
+      .subscribe(res => {
+        console.log(res);
+        alert('SUCCESS !!');
+      })
+  }
+--------------------------------------------------

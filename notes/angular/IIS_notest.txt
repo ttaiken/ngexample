@@ -1,0 +1,44 @@
+Authenticated Users  ->  c:\inetpub\wwww
+%windir%\system32\inetsrv\appcmd unlock config -section:system.webServer/handlers
+---------------------------------------------------------------------------------
+URL Rewrite 2.0
+---------------------------------------------------------------------------------
+
+pip install wfastcgi
+wfastcgi-enable
+"c:\learn\python37\python.exe|c:\learn\python37\lib\site-packages\wfastcgi.py" can now be used as a FastCGI script processor
+
+=====================
+web.config
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <handlers>
+            <add name="Python FastCGI" 
+                 path="*" 
+                 verb="*" 
+                 modules="FastCgiModule" 
+                 scriptProcessor="c:\learn\python37\python.exe|c:\learn\python37\lib\site-packages\wfastcgi.py" 
+                 resourceType="Unspecified" 
+                 requireAccess="Script"/>
+        </handlers>
+    </system.webServer>
+    <appSettings>
+        <add key="WSGI_HANDLER" value="django.core.wsgi.get_wsgi_application()" />
+        <add key="PYTHONPATH" value="C:\python\InfraManager" />
+        <add key="DJANGO_SETTINGS_MODULE" value="InfraManager.settings" />
+    </appSettings>
+</configuration>
+
+---------static------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+		<handlers>
+			<clear/>
+			  <add name="StaticFile" path="*" verb="*" modules="StaticFileModule" resourceType="File" requireAccess="Read" />
+		</handlers>
+    </system.webServer>
+
+</configuration>
+------------------------

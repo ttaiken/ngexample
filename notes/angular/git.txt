@@ -1,0 +1,2 @@
+git remote add origin https://zjqisme1980@dev.azure.com/zjqisme1980/test01/_git/test01
+git push -u origin --all

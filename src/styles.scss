@@ -1,1 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~node_modules/bootstrap/scss/bootstrap.scss";
+@import '~node_modules/bootstrap/scss/_variables.scss';
+@import './_variables';
+@mixin themable($theme-name, $container-bg, $left-bg, $right-bg, $innertext, $button-bg,$nav-bg) {
+    $screen-sm-min: 576px;
+    $screen-md-min: 768px;
+    $screen-lg-min: 992px;
+    $screen-xl-min: 1200px;
+
+    .#{$theme-name} {
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            min-width: $screen-sm-min;
+        }
+
+        #app {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            min-width: $screen-sm-min;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+        }
+
+        aside {
+            background-color: $nav-bg;
+        }
+
+        .cz--nav-search-button {
+            border-color: green;
+            color: $button-bg;
+
+            &:hover, &:after, &:focus {
+                background-color: green;
+                color: white;
+            }
+        }
+
+
+        .cz-brand {
+            &:hover, &:focus, &:active {
+                background-color: transparent;
+                color: $button-bg;
+            }
+        }
+
+        .cz-login {
+            &:hover, &:focus, &:active {
+                background-color: transparent;
+                color: $button-bg !important;
+            }
+        }
+
+        .cz-register {
+            &:hover, &:focus, &:active {
+                background-color: transparent;
+                color: $button-bg !important;
+            }
+        }
+
+        .navbar-toggler {
+            float: right;
+        }
+
+        @media screen and (orientation: landscape) {
+            .leftside {
+                position: relative;
+            }
+        }
+
+        @media screen and (max-width: $screen-md-min) {
+
+            .hideitem {
+                display: none;
+            }
+        }
+    }
+}
+
+/*yello , green, green-light,withe,brown, blue-light*/
+@include themable(theme-1, #f7eb80, #497265, #82aa91, #fff, #bc6a49,#e3f2fd);

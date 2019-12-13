@@ -1,0 +1,104 @@
+
+1-----[(ngModel)]---------------------------------------
+import { FormsModule } from '@angular/forms';
+
+<div>
+  <label>name:
+    <input [(ngModel)]="hero.name" placeholder="name"/>
+  </label>
+</div>
+2-----*ngFor----(click)----------------------------------
+{ path: 'product-details/:id', component: ProductDetails }
+
+<a *ngFor="let product of products"
+  [routerLink]="['/product-details', product.id]">
+  
+{{ product.name }}
+
+</a>
+
+<li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+goToProductDetails(id) {
+  this.router.navigate(['/product-details', id]);
+}
+3----<div *ngIf="selectedHero">----------------------------
+
+npm install -g @angular/cli
+ng new infraweb
+ng serve
+nb build
+ng generate service heroes/hero
+
+
+1. src / app / heroes / hero.service.ts
+import { Injectable } from '@angular/core';
+import { HEROES }     from './mock-heroes';
+
+@Injectable()
+export class HeroService {
+  getHeroes() { return HEROES; }
+}
+
+
+
+export const HEROES: Hero[] = [
+  { id: 11, isSecret: false, name: 'Mr. Nice' },
+  { id: 12, isSecret: false, name: 'Narco' },
+  { id: 13, isSecret: false, name: 'Bombasto' },
+  { id: 14, isSecret: false, name: 'Celeritas' },
+  { id: 15, isSecret: false, name: 'Magneta' },
+  { id: 16, isSecret: false, name: 'RubberMan' },
+  { id: 17, isSecret: false, name: 'Dynama' },
+  { id: 18, isSecret: true,  name: 'Dr IQ' },
+  { id: 19, isSecret: true,  name: 'Magma' },
+  { id: 20, isSecret: true,  name: 'Tornado' }
+];
+
+#---Simulate a data server-------------------
+npm install angular-in-memory-web-api --save
+
+
+
+
+
+
+
+2.html
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button class="dropdown-item">Action - 1</button>
+        <button class="dropdown-item">Another Action</button>
+        <button class="dropdown-item">Something else is here</button>
+      </div>
+    </div>
+  </div>
+<div class="col text-right">
+    <div ngbDropdown placement="top-right" class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>Toggle dropup</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+        <button class="dropdown-item">Action - 1</button>
+        <button class="dropdown-item">Another Action</button>
+        <button class="dropdown-item">Something else is here</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+------CSRF---------------------
+app.module.ts
+https://angular.io/guide/http#security-xsrf-protection
+
+import { HttpClientModule,HttpClientXsrfModule } from '@angular/common/http';
+
+imports: [
+  HttpClientModule,
+  HttpClientXsrfModule.withOptions({
+    cookieName: 'My-Xsrf-Cookie',
+    headerName: 'My-Xsrf-Header',
+  }),
+],
+
