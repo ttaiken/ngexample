@@ -27,7 +27,6 @@ import { ProductorComponent } from './views/productor/productor.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     NgbModule
   ],
   providers: [],
