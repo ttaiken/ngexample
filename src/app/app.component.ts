@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BreadcrumbComponent } from './components/layout/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-root',

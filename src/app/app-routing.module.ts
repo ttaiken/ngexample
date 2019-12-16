@@ -7,7 +7,20 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './views/comm/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: 'vm/:id', component: VMComponent },
+  { 
+    path: 'vm', 
+    component: VMComponent,
+    data: { breadcrumb: 'vm'},
+    children: [
+      {
+        path: ':id',
+        component: VMComponent,
+        data: {
+          breadcrumb: ''
+        }
+      }
+    ] 
+  },
   { path: 'network/:id',      component: NetworkComponent },
   {
     path: 'home',

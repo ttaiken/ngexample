@@ -11,6 +11,7 @@ import { VMComponent } from './views/productor/vm/vm.component';
 import { NetworkComponent } from './views/productor/network/network.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './views/comm/page-not-found/page-not-found.component';
+import { BreadcrumbComponent } from './components/layout/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PageNotFoundComponent } from './views/comm/page-not-found/page-not-foun
     PageNotFoundComponent,
     VMComponent,
     NetworkComponent,
-    HomeComponent
+    HomeComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,

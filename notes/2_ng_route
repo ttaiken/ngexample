@@ -1,0 +1,5 @@
+1.
+ng g c home
+ng g c /views/productor/vm
+ng g c /views/productor/Network
+ng g c /views/comm/page-not-found
