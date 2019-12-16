@@ -1,27 +1,35 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { ProductorComponent } from './views/productor/productor.component';
 import { VMComponent } from './views/productor/vm/vm.component';
 import { NetworkComponent } from './views/productor/network/network.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './views/comm/page-not-found/page-not-found.component';
 
+
 const routes: Routes = [
   { 
-    path: 'vm', 
-    component: VMComponent,
-    data: { breadcrumb: 'vm'},
+    path: 'productor', 
+    component: ProductorComponent,
+    data: { breadcrumb: 'Productor'},
     children: [
       {
-        path: ':id',
+        path: 'vm/:id',
         component: VMComponent,
         data: {
-          breadcrumb: ''
+          breadcrumb: 'VM'
+        }
+      },
+      {
+        path: 'network',
+        component: NetworkComponent,
+        data: {
+          breadcrumb: 'Network'
         }
       }
     ] 
   },
-  { path: 'network/:id',      component: NetworkComponent },
   {
     path: 'home',
     component: HomeComponent,

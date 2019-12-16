@@ -12,6 +12,7 @@ import { NetworkComponent } from './views/productor/network/network.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './views/comm/page-not-found/page-not-found.component';
 import { BreadcrumbComponent } from './components/layout/breadcrumb/breadcrumb.component';
+import { ProductorComponent } from './views/productor/productor.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BreadcrumbComponent } from './components/layout/breadcrumb/breadcrumb.c
     VMComponent,
     NetworkComponent,
     HomeComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    ProductorComponent
   ],
   imports: [
     BrowserModule,
