@@ -4,6 +4,7 @@ npm install -g @angular/cli
 ng new --style=sass ngexample
 cd ngexample
 ------------------#-bootStrap----------------------------------
+npm install rxjs
 npm install bootstrap jquery popper 
 npm install --save @ng-bootstrap/ng-bootstrap
 0.app.module.ts

@@ -29,8 +29,9 @@ ng new infraweb
 ng serve
 nb build
 ng generate service heroes/hero
-
-
+------------------function--------------------------
+import { Component, OnInit } from '@angular/core';
+----------------------------------------------
 1. src / app / heroes / hero.service.ts
 import { Injectable } from '@angular/core';
 import { HEROES }     from './mock-heroes';

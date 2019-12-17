@@ -15,11 +15,21 @@ const routes: Routes = [
     data: { breadcrumb: 'Productor'},
     children: [
       {
-        path: 'vm/:id',
+        path: 'vm',
         component: VMComponent,
         data: {
           breadcrumb: 'VM'
-        }
+        },
+        children: [
+          {
+            path: ':id',
+            component: VMComponent,
+            data: {
+              breadcrumb: 'vmid'
+            }
+          }
+        ]
+      
       },
       {
         path: 'network',

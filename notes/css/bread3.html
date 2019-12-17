@@ -1,0 +1,74 @@
+<html>
+<head>
+	<style>
+* {
+  padding: 0;
+  margin: 0;
+  
+}
+.breadcrumb { 
+  list-style: none; 
+  overflow: hidden; 
+  font: 18px Sans-Serif;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.breadcrumb li a {
+  color: white;
+  text-decoration: none; 
+  padding: 10px 0 10px 65px;
+  background: brown; /* fallback color */
+  background: hsla(34,85%,35%,1); 
+  position: relative; 
+  display: flex;
+}
+
+.breadcrumb li a::after { 
+  content: "  "; 
+  display: flex; 
+  width: 0;   
+  height: 0;
+  
+  border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
+  border-bottom: 50px solid transparent;
+  border-left: 30px solid hsla(34,85%,35%,1);
+  
+  position: absolute;
+  top: 50%;
+  margin-top: -50px; 
+  left: 100%;
+  z-index: 2; 
+}
+.breadcrumb li a::before { 
+  content: " "; 
+  display: block; 
+  width: 0; 
+  height: 0;
+  border-top: 50px solid transparent;       
+  border-bottom: 50px solid transparent;
+  border-left: 30px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px; 
+   
+  margin-left: 2px;
+  left: 100%;
+  z-index: 1; 
+}
+	</style>
+</head>
+<body>
+
+<ul class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Vehicles</a></li>
+  <li><a href="#">Vans</a></li>
+  <li><a href="#">Camper Vans</a></li>
+  <li><a href="#">1989 VW Westfalia Vanagon</a></li>
+</ul>
+
+</body>
+</html>

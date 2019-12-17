@@ -1,6 +1,7 @@
 @import "~node_modules/bootstrap/scss/bootstrap.scss";
 @import '~node_modules/bootstrap/scss/_variables.scss';
 @import './_variables';
+
 @mixin themable($theme-name, $container-bg, $left-bg, $right-bg, $innertext, $button-bg,$nav-bg) {
     $screen-sm-min: 576px;
     $screen-md-min: 768px;
@@ -8,6 +9,10 @@
     $screen-xl-min: 1200px;
 
     .#{$theme-name} {
+        * {
+            padding: 0px;
+            text-align: center;
+        }
 
         html, body {
             width: 100%;
@@ -83,4 +88,4 @@
 }
 
 /*yello , green, green-light,withe,brown, blue-light*/
-@include themable(theme-1, #f7eb80, #497265, #82aa91, #fff, #bc6a49,#e3f2fd);
+@include themable(theme-1,$container-bg,$left-bg ,$right-bg ,$innertext , $button-bg   ,$nav-bg  );
