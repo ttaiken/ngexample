@@ -17,15 +17,15 @@
         li a {
             color: white;
             text-decoration: none; 
-            padding: 10px 0 10px 65px;
+            padding: 10px 0 10px 60px;
             background: brown; /* fallback color */
             background: hsla(34,85%,35%,1); 
             position: relative; 
-            display: flex;        
+               
         }
         li a::after { 
             content: "  "; 
-            display: flex; 
+        
             width: 0;   
             height: 0;
             

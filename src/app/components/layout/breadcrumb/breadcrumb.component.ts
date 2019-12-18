@@ -17,6 +17,7 @@ interface IBreadcrumb {
 export class BreadcrumbComponent implements OnInit {
   public breadcrumbs: IBreadcrumb[];
   constructor(    private activatedRoute: ActivatedRoute, private router: Router) { 
+
     this.breadcrumbs = [];
   }
 

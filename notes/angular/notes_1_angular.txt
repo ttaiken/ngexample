@@ -1,7 +1,7 @@
 npm install -g @angular/cli
 
 
-ng new --style=sass ngexample
+ng new --style=scss ngexample
 cd my-project
 ------------------#-bootStrap----------------------------------
 npm install bootstrap jquery popper 

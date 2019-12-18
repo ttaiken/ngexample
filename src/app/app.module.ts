@@ -13,6 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './views/comm/page-not-found/page-not-found.component';
 import { BreadcrumbComponent } from './components/layout/breadcrumb/breadcrumb.component';
 import { ProductorComponent } from './views/productor/productor.component';
+import { LeftnavComponent } from './components/layout/leftnav/leftnav.component';
+import { CznavbarComponent } from './components/layout/cznavbar/cznavbar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ProductorComponent } from './views/productor/productor.component';
     NetworkComponent,
     HomeComponent,
     BreadcrumbComponent,
-    ProductorComponent
+    ProductorComponent,
+    LeftnavComponent,
+    CznavbarComponent
   ],
   imports: [
     BrowserModule,
