@@ -1,14 +1,24 @@
-<p>leftnav works!</p>
-<ul class="leftnav">
-    <li *ngFor="let item of Routes">
-      <a [routerLink]="[item.path]">{{ item.data.breadcrumb }}</a>
-      <div *ngIf="item.children">
-          <ul class="submenu">
-             <li *ngFor="let subItem of item.children">
-                 <a [routerLink]="[item.path + '/' + subItem.path]">{{subItem.data.breadcrumb}}</a>
-             </li>  
-        
-          </ul>
-      </div>
-    </li>
-  </ul>
+<div class="leftnav">
+  <div id="header" style="text-align:left;background-color: black;color:white;">
+    <span ><<<</span>
+    
+  </div>
+  <div id="menu">
+    <ul>
+        <li *ngFor="let item of Routes">
+          <a [routerLink]="[item.path]">{{ item.data.breadcrumb }}</a>
+          <div *ngIf="item.children">
+              <ul class="submenu">
+                <li *ngFor="let subItem of item.children">
+                    <a [routerLink]="[item.path + '/' + subItem.path]">{{subItem.data.breadcrumb}}</a>
+                </li>  
+            
+              </ul>
+          </div>
+        </li>
+      </ul>
+  </div>
+  <div id="favorate">
+    favorate
+  </div>
+</div>

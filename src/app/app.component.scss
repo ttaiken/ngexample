@@ -2,3 +2,27 @@
 .footer_pg {
     background-color: $nav-bg;
 }
+
+
+
+.productormenu{
+  height: 500px;
+    position: absolute;
+    display: flex;
+    z-index: 100;
+}
+
+
+.historys { 
+    margin: 0 0 2em 0; 
+    list-style-type: none; 
+    padding: 0; 
+    width: 15em; 
+  } 
+  .customers li { 
+    background-color: steelblue; 
+    color: white; 
+    border-radius: 4px; 
+    padding: 4px; 
+    margin: 2px; 
+  }

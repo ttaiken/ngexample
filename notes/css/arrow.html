@@ -1,0 +1,90 @@
+<html>
+<head>
+	<style type="text/css">
+		html, body , {
+
+			display: flex;
+			flex-direction: row;
+
+		}
+	.container {
+		display: flex;
+		flex-direction: row;
+		overflow: hidden; 
+	}
+
+	a {
+	  color: white;
+	    text-decoration: none; 
+	  padding: 10px 0 10px 65px;
+	  background: brown; 
+	  background: hsla(34,85%,35%,1); 
+	  position: relative;
+	}
+	a::after { 
+
+	  	content: ""; 
+	  	border-top: 50px solid transparent; 
+		border-bottom: 50px solid transparent;
+		border-left: 30px solid hsla(34,85%,35%,1);
+		
+		position: absolute;
+		top: 50%;
+		margin-top: -50px;
+		z-index: 2; 
+
+	}
+
+
+	i {
+
+	  border: solid blue;
+	  border-width: 3px 3px 0px 0px;
+	  display: inline-block;
+	  padding: 3px;
+	}
+
+	.right {
+	  transform: rotate(-45deg);
+	  -webkit-transform: rotate(-45deg);
+	}
+
+	.left {
+	  transform: rotate(135deg);
+	  -webkit-transform: rotate(135deg);
+	}
+
+	.up {
+	  transform: rotate(-135deg);
+	  -webkit-transform: rotate(-135deg);
+	}
+
+	.down {
+	  transform: rotate(45deg);
+	  -webkit-transform: rotate(45deg);
+	}
+
+ a:nth-child(2)       { background:        hsla(34,85%,45%,1); }
+ a:nth-child(2):after { border-left-color: hsla(34,85%,45%,1); }
+a:nth-child(3)      { background:        hsla(34,85%,55%,1); }
+a:nth-child(3):after { border-left-color: hsla(34,85%,55%,1); }
+ a:nth-child(4)       { background:        hsla(34,85%,65%,1); }
+a:nth-child(4):after { border-left-color: hsla(34,85%,65%,1); }
+ a:nth-child(5)       { background:        hsla(34,85%,75%,1); }
+ a:nth-child(5):after { border-left-color: hsla(34,85%,75%,1); }
+ 
+	</style>
+</head>
+<body>
+	<div class="container">
+<a>home</a><a>productor</a><a>vm</a>
+</div>
+<p>Not arrow: <i></i></p>
+<p>Right arrow: <i class="arrow right"></i></p>
+<p>Left arrow: <i class="arrow left"></i></p>
+<p>Up arrow: <i class="arrow up"></i></p>
+<p>Down arrow: <i class="arrow down"></i></p>
+
+
+</body>
+</html>

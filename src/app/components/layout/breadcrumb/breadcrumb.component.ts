@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd, Params, PRIMARY_OUTLET } from "@angular/router";
 import { map,filter } from 'rxjs/operators';
 
+import {select, Store} from '@ngrx/store'; 
+import {HistoryOperation} from '../../../models/historyoperation';
+import { AddHistory } from '../../../states/customer.actions';
 interface IBreadcrumb {
   label: string;
   params: Params;
@@ -16,7 +19,7 @@ interface IBreadcrumb {
 })
 export class BreadcrumbComponent implements OnInit {
   public breadcrumbs: IBreadcrumb[];
-  constructor(    private activatedRoute: ActivatedRoute, private router: Router) { 
+  constructor( private activatedRoute: ActivatedRoute, private router: Router,private store: Store<{ historys: HistoryOperation[] }>) { 
 
     this.breadcrumbs = [];
   }
@@ -26,6 +29,13 @@ export class BreadcrumbComponent implements OnInit {
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(event => {
       let root: ActivatedRoute = this.activatedRoute.root;
       this.breadcrumbs = this.getBreadcrumbs(root);
+      if(this.breadcrumbs.length>1){
+        this.AddHistoryOperation(this.breadcrumbs[this.breadcrumbs.length -1 ].url, 2);
+      }else {
+        this.AddHistoryOperation("/home",2);
+
+      }
+
     })
   }
 
@@ -70,6 +80,11 @@ export class BreadcrumbComponent implements OnInit {
       return this.getBreadcrumbs(child, url, breadcrumbs);
     }
   }
-
+  AddHistoryOperation(path: string, timelength: number){
+    const history = new HistoryOperation();
+    history.path = path;
+    history.timelength = timelength;
+    this.store.dispatch(new AddHistory(history));
+  }
 
 }

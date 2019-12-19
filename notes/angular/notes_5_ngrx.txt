@@ -1,0 +1,27 @@
+https://malcoded.com/posts/angular-ngrx-guide/
+https://dzone.com/articles/angular-app-state-management-with-ngrx
+
+
+ng n ngtest
+cd ngtest
+
+npm install @ngrx/store --save
+npm install @ngrx/core @ngrx/effects @ngrx/store
+
+ng g class models/customer
+
+src/app/state/customer.actions.ts
+src/app/state/customer.reducer.ts
+
+-----------------------
+in app.module.ts
+import { StoreModule } from '@ngrx/store'; 
+import { CustomerReducer } from './customer.reducer';
+
+imports: [ 
+    ...,
+    StoreModule.forRoot({ customers: CustomerReducer })
+],
+-------------------------
+
+ng g c  CustomersView
