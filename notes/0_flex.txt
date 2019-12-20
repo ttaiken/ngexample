@@ -1,2 +1,9 @@
 flex-grow, flex-shrink, flex-basis
 flex: 0 1 100%
+--------------------------------
+flex-direction: row/column
+flex-wrap: nowrap/wrap/wrap-reverse/intial/inherit  default:nowrap
+-------------------------
+            // align-content: space-between;
+            justify-content: space-between;
+-------------------------

@@ -11,7 +11,7 @@
     .#{$theme-name} {
         width: 100vh;
         height: 100vh;
-        min-width: $screen-sm-min;
+  
         
         * {
             padding: 0px;
@@ -20,20 +20,21 @@
         }
 
         html, body {
-            width: 100vh;
+            width: 100vw;
             height: 100vh;
-            min-width: $screen-sm-min;
+            background-color: red;
         }
 
         #app {
             display: flex;
-            min-height: 100vh;
             flex-direction: column;
+            height: 100vh;
             min-width: $screen-sm-min;
+            justify-content: space-between;
         }
 
         main {
-            flex: 1;
+           flex: 1;
             display: flex;
         }
 
@@ -42,7 +43,9 @@
         // }
 
 
-        .cz--nav-search-button {
+
+
+        .cz-nav-search-button {
             border-color: green;
             color: $button-bg;
 

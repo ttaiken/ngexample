@@ -17,6 +17,7 @@ import { BreadcrumbComponent } from './components/layout/breadcrumb/breadcrumb.c
 import { ProductorComponent } from './views/productor/productor.component';
 import { LeftnavComponent } from './components/layout/leftnav/leftnav.component';
 import { CznavbarComponent } from './components/layout/cznavbar/cznavbar.component';
+import { CzheadComponent } from './components/layout/czhead/czhead.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CznavbarComponent } from './components/layout/cznavbar/cznavbar.compone
     BreadcrumbComponent,
     ProductorComponent,
     LeftnavComponent,
-    CznavbarComponent
+    CznavbarComponent,
+    CzheadComponent
   ],
   imports: [
     BrowserModule,

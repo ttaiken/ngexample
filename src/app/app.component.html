@@ -1,35 +1,25 @@
-<div id="app" >
-  <header>Header</header>
-  <aside class="productormenu"> 
-    <app-leftnav></app-leftnav>
-  </aside>
+<div id="app">
+  <app-czhead (show)="showLeftbar($event)"> </app-czhead>
   
-  <main >
-      <aside class="col-3 ">
-          <app-cznavbar></app-cznavbar>
-      </aside> 
+  <aside class="productormenu" *ngIf="show_leftbar"> 
+    <app-leftnav  (hide)="showLeftbar($event)" ></app-leftnav>
+  </aside>  
+  <main>
       <div id="leftside" class="d-flex "></div>
       <article >
-          <app-breadcrumb></app-breadcrumb>
-     
-          <section>
-            
-            <router-outlet></router-outlet>
-            
+          <app-breadcrumb></app-breadcrumb>     
+          <section>            
+            <router-outlet></router-outlet>            
             <ul class="historys">
               <li *ngFor="let item of historys | async; let i=index">
                 <span >{{i+1}}.</span> {{item.path}} {{item.timelength}}
-                <button style="float: right" (click)="removeCustomer(i)">Remove</button>
+     
               </li>
             </ul>
           </section>
-
-      </article>
-  
+      </article>  
   </main>
   <footer class="footer_pg">footer</footer>
-
-
 </div>
 
 

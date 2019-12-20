@@ -1,9 +1,16 @@
-<div class="leftnav">
-  <div id="header" style="text-align:left;background-color: black;color:white;">
-    <span ><<<</span>
-    
+<div class="leftnav"  (click)="HideLeftbar()">
+  <div id="header" style="text-align:center;background-color: lightblue;color:white;">
+    <span>show/hide</span> 
   </div>
   <div id="menu">
+    <ul>
+      <li>+Create Resource</li>
+
+      <li>Dashboard</li>
+      <li><a [routerLink]="productor">AllProductor</a></li>
+      <li><a [routerLink]="resources">AllResource</a></li>
+    </ul>
+    <span>-------- Favorates -------- </span>
     <ul>
         <li *ngFor="let item of Routes">
           <a [routerLink]="[item.path]">{{ item.data.breadcrumb }}</a>

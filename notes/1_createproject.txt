@@ -1,3 +1,6 @@
+https://ionicons.com/
+https://flatuicolors.com/
+
 npm install -g @angular/cli
 
 

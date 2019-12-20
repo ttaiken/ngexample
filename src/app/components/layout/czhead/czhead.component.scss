@@ -1,0 +1,52 @@
+.header {
+    display: flex;
+    flex-direction: column;
+}
+.header-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   
+}
+.header-logo {
+    width:200px;
+    background-color: lightblue;
+}
+
+
+.header-search {
+    flex:1;
+    display: flex;
+    justify-content: flex-start;
+}
+.header-search input{
+    margin-left: 10px;
+}
+
+.header-utility {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-right-pop {
+
+    position: absolute;
+    right: 10px;
+    z-index: 200;
+    display: flex;
+    
+}
+.header-right-pop label{
+    width: 100px;
+    text-align: left;
+}
+.header-right-pop div{
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.heeader-login-bt {
+    display: flex;
+    justify-content: center;
+}

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-leftnav',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./leftnav.component.scss']
 })
 export class LeftnavComponent implements OnInit {
-  Routes = [
+  
+  @Output() hide = new EventEmitter<boolean>();
+    Routes = [
     {
       path: 'home',
       data: {breadcrumb: 'Home'}
@@ -44,10 +47,14 @@ export class LeftnavComponent implements OnInit {
       ] 
     },
 
-    ]
-  constructor() { }
+    ];
+  constructor() {
+
+   }
 
   ngOnInit() {
   }
-
+  HideLeftbar(){
+    this.hide.emit(false);
+  }
 }
