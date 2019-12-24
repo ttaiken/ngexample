@@ -1,0 +1,6 @@
+		.tran {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transform: translateZ(400px);
+		}

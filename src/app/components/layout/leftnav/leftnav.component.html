@@ -1,31 +1,41 @@
-<div class="leftnav"  (click)="HideLeftbar()">
-  <div id="header" style="text-align:center;background-color: lightblue;color:white;">
-    <span>show/hide</span> 
-  </div>
-  <div id="menu">
-    <ul>
-      <li>+Create Resource</li>
-
-      <li>Dashboard</li>
-      <li><a [routerLink]="productor">AllProductor</a></li>
-      <li><a [routerLink]="resources">AllResource</a></li>
-    </ul>
-    <span>-------- Favorates -------- </span>
-    <ul>
-        <li *ngFor="let item of Routes">
-          <a [routerLink]="[item.path]">{{ item.data.breadcrumb }}</a>
-          <div *ngIf="item.children">
-              <ul class="submenu">
-                <li *ngFor="let subItem of item.children">
-                    <a [routerLink]="[item.path + '/' + subItem.path]">{{subItem.data.breadcrumb}}</a>
-                </li>  
-            
-              </ul>
-          </div>
-        </li>
+<nav  (click)="HideLeftbar()">
+  <header>
+    Close
+  </header>
+ 
+  <ul >
+  
+    <li *ngFor="let item of Routes">
+      <a [routerLink]="[item.path]">{{ item.data.breadcrumb }}</a>
+      <ul *ngFor="let subItem of item.children">
+        <li>
+            <a [routerLink]="[item.path + '/' + subItem.path]">{{subItem.data.breadcrumb}}</a>
+        </li>  
+      
       </ul>
-  </div>
-  <div id="favorate">
-    favorate
-  </div>
-</div>
+    </li>
+
+  </ul>
+</nav>
+
+<!-- <ul>
+  <li><span>Navigation</span></li>
+  <li><a [routerLink]="productor">+Create Resource</a></li>
+  <li>Dashboard</li>
+  <li><a [routerLink]="productor">AllProductor</a></li>
+  <li><a [routerLink]="resources">AllResource</a></li>
+  <li><span>Favorates</span></li>
+  <li><a [routerLink]="productor">AllProductor</a></li>
+  <li><a [routerLink]="resources">AllResource</a></li>
+  <li *ngFor="let item of Routes">
+    <a [routerLink]="[item.path]">{{ item.data.breadcrumb }}</a>
+    <div *ngIf="item.children">
+        <ul class="submenu">
+          <li *ngFor="let subItem of item.children">
+              <a [routerLink]="[item.path + '/' + subItem.path]">{{subItem.data.breadcrumb}}</a>
+          </li>  
+        
+          </ul>
+      </div>
+  </li>
+</ul> -->

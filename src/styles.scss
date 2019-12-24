@@ -28,6 +28,7 @@
         #app {
             display: flex;
             flex-direction: column;
+            width: 100vw;
             height: 100vh;
             min-width: $screen-sm-min;
             justify-content: space-between;
@@ -35,9 +36,15 @@
 
         main {
            flex: 1;
-            display: flex;
+           display: flex;
+           flex-direction: row;
         }
 
+        article {
+            display: flex;
+            flex:1;
+            flex-direction: column;
+        }
         // aside {
         //     background-color: $nav-bg;
         // }

@@ -6,12 +6,18 @@ import { Component, OnInit,Output, EventEmitter } from '@angular/core';
   styleUrls: ['./czhead.component.scss']
 })
 export class CzheadComponent implements OnInit {
-  @Output() show = new EventEmitter<boolean>();
+  @Output() showLeftbar = new EventEmitter<boolean>();
+  showLogin: boolean;
   constructor() { }
 
   ngOnInit() {
+    this.showLogin = false;
   }
   ShowLeftbar(){
-    this.show.emit(true);
+    this.showLeftbar.emit(true);
+  }
+  ShowLogin(){
+    this.showLogin =  !this.showLogin;
+
   }
 }

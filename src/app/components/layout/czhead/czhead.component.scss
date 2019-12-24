@@ -1,3 +1,9 @@
+@import 'src/_variables';
+header, .header-right-pop{
+    background-color: $right-bg ;
+    color: $color-font;
+}
+
 .header {
     display: flex;
     flex-direction: column;
@@ -10,7 +16,7 @@
 }
 .header-logo {
     width:200px;
-    background-color: lightblue;
+    
 }
 
 
@@ -18,9 +24,11 @@
     flex:1;
     display: flex;
     justify-content: flex-start;
+    
 }
 .header-search input{
     margin-left: 10px;
+    width: 100%;
 }
 
 .header-utility {

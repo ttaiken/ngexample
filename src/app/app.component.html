@@ -1,8 +1,8 @@
 <div id="app">
-  <app-czhead (show)="showLeftbar($event)"> </app-czhead>
+  <app-czhead (showLeftbar)="ShowLeftbar($event)"> </app-czhead>
   
   <aside class="productormenu" *ngIf="show_leftbar"> 
-    <app-leftnav  (hide)="showLeftbar($event)" ></app-leftnav>
+    <app-leftnav  (hide)="ShowLeftbar($event)" ></app-leftnav>
   </aside>  
   <main>
       <div id="leftside" class="d-flex "></div>

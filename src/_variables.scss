@@ -6,8 +6,17 @@ $left-bg         :#497265    ;
 
 $right-bg        :#82aa91    ;
 
-$innertext       :#fff       ;
+$innertext       :#82aa91#fff       ;
 
 $button-bg       :#bc6a49    ;
 
 $nav-bg          :#e3f2fd    ;
+
+
+$header-bg: #82aa91;
+$main-bg : #fff;
+
+$color: #404040;
+$color-d: darken($color, 5%);
+$color-l: lighten($color, 7.5%);
+$color-font: #fff;

@@ -1,0 +1,15 @@
+
+export class MyComponent implements  OnInit {
+
+constructor(private el: ElementRef) {}
+
+    ngOnInit() {
+      //This is the important line you can use in your function in the code
+      //-------------------------------------------------------------------------- 
+        let offset = this.el.nativeElement.getBoundingClientRect().top;
+      //--------------------------------------------------------------------------    
+
+        console.log(offset);
+    }
+
+}

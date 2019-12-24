@@ -6,14 +6,22 @@
     $screen-lg-min: 992px;
     $screen-xl-min: 1200px;
 
+
     .#{$theme-name} {
-        
-        list-style: none; 
-        overflow: hidden; 
-        font: 18px Sans-Serif;
-        display: flex;
-        flex-direction: row;
-        padding: 0;
+        width:100%;
+   
+       
+            list-style: none; 
+            overflow: hidden; 
+            font: 12px Sans-Serif;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            background-color: $container-bg;
+            padding: 0;
+            margin: 0;
+
+      
         li a {
             color: white;
             text-decoration: none; 
@@ -88,4 +96,4 @@
 
 /*yello , green, green-light,withe,brown, blue-light*/
 // @include themable(theme-breadcrumb, #f7eb80, #497265, #82aa91, #fff, #bc6a49,#e3f2fd);
-@include themable(theme-breadcrumb,$container-bg,$left-bg ,$right-bg ,$innertext , $button-bg   ,$nav-bg  );
+@include themable(theme-breadcrumb,$main-bg,$left-bg ,$right-bg ,$innertext , $button-bg   ,$nav-bg  );

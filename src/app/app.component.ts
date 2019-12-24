@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 
 import {select, Store} from '@ngrx/store'; 
@@ -15,14 +15,16 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  @ViewChild(CzheadComponent,{static: false})  czhead: CzheadComponent;
   show_leftbar: boolean;
-  title = 'ngexample';
+
   historys: Observable<HistoryOperation[]>;
   constructor(private store: Store<{ historys: HistoryOperation[] }>){
     this.historys = store.pipe(select('historys')); 
     this.show_leftbar = false;
   }
-  showLeftbar(event:boolean){
+  ShowLeftbar(event:boolean){
     this.show_leftbar = event;
+    console.log(this.czhead)
   }
 }
