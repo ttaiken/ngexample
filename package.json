@@ -21,6 +21,8 @@
     "@angular/router": "~8.2.14",
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",
     "@ngrx/store": "^8.6.0",
+    "babylonjs": "^4.0.3",
+    "babylonjs-materials": "^4.0.3",
     "bootstrap": "^4.4.1",
     "rxjs": "^6.4.0",
     "tslib": "^1.10.0",

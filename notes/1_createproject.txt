@@ -4,12 +4,12 @@ https://flatuicolors.com/
 npm install -g @angular/cli
 
 
-ng new --style=sass ngexample
+ng new --style=scss ngexample
 cd ngexample
 ------------------#-bootStrap----------------------------------
 npm install rxjs
 npm install bootstrap jquery popper 
-npm install --save @ng-bootstrap/ng-bootstrap
+npm install --save @ng-bootstrap/ng-bootstrap bootstrap 
 0.app.module.ts
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -58,8 +58,8 @@ const routes: Routes = [
 ---------------------------
 ng build --prod --base-href .
 
-
-
+-------3d webgl babylon----------------
+npm install --save bootstrap babylonjs babylonjs-materials
 
 
 

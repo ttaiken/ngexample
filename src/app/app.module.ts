@@ -18,6 +18,7 @@ import { ProductorComponent } from './views/productor/productor.component';
 import { LeftnavComponent } from './components/layout/leftnav/leftnav.component';
 import { CznavbarComponent } from './components/layout/cznavbar/cznavbar.component';
 import { CzheadComponent } from './components/layout/czhead/czhead.component';
+import { D3HeadComponent } from './components/babylon/d3-head/d3-head.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CzheadComponent } from './components/layout/czhead/czhead.component';
     ProductorComponent,
     LeftnavComponent,
     CznavbarComponent,
-    CzheadComponent
+    CzheadComponent,
+    D3HeadComponent
   ],
   imports: [
     BrowserModule,
