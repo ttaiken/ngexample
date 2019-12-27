@@ -1,0 +1,61 @@
+<html>
+<head>
+	<style type="text/css">
+		
+		header {
+		  position: relative;
+		  height: 300px;
+		  background-image: linear-gradient(#ff9d2f, #ff6126);
+		}
+
+		h1 {
+		  padding: 100px 0;
+		  font: 44px "Arial";
+		  text-align: center;
+		}
+
+		header h1 {
+		  color: white;
+		}
+
+		svg {
+		  position: absolute;
+		  bottom: 0;
+		  width: 100%;
+		  height: 100px;
+		}
+
+		@media (max-width: 699px) {
+		  .svg--lg {
+		    display: none;
+		  }
+		}
+
+		@media (min-width: 700px) {
+		  .svg--sm {
+		    display: none;
+		  }
+		}
+	</style>
+</head>
+<body>
+	
+
+
+<header>
+
+
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+
+    <polygon class="svg--sm" fill="white" points="0,0 30,100 65,21 90,100 100,75 100,100 0,100"/>
+    <polygon class="svg--lg" fill="white" points="0,0 15,100 33,21 45,100 50,75 55,100 72,20 85,100 95,50 100,80 100,100 0,100" />
+  </svg>
+</header>
+
+<section>
+  <h1>Section Content</h1>
+</section>
+
+</body>
+</html>

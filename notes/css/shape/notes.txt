@@ -1,0 +1,35 @@
+canvas: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_text
+
+-----------------
+css board:
+https://www.w3.org/TR/css-shapes/#propdef-shape-outside
+https://1stwebdesigner.com/css-shapes/
+https://www.sarasoueidan.com/blog/css-shapes/
+https://www.html5rocks.com/en/tutorials/shapes/getting-started/
+
+plugin:https://betravis.github.io/shape-tools/exclusion-punch/
+
+shape-outside
+shape-inside
+clip-path
+polygon(50% 0, ...);
+
+
+
+.shaped{
+    /*...*/
+    shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+    shape-margin: 20px;
+}
+
+.shaped{
+    /*...*/
+
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+}
+
+
+.container{
+    /*...*/
+    shape-inside: url(mask.png) top left;
+}

@@ -1,0 +1,31 @@
+<html>
+<head>
+	<style type="text/css">
+		html, body { height: 100%; }
+		body {
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		}
+
+		body {
+		  background-color: #333;
+		}
+	</style>
+</head>
+<body>
+	
+<canvas></canvas>
+<script>
+	var canvas = document.querySelector('canvas');
+	var ctx = canvas.getContext('2d');
+	ctx.fillStyle = '#0074d9';
+	ctx.fillRect(0, 0, 100, 100);
+	ctx.font = '48px serif';
+  	ctx.fillText('Hello world', 10, 50);
+
+
+</script>
+
+</body>
+</html>
